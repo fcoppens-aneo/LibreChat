@@ -3,8 +3,8 @@
 USER="fcoppens"
 ROOT="/home/$USER/LibreChat"
 
-cp -v $ROOT/setup/env $ROOT/.env
 cd $ROOT
+cp -v setup/env .env
 docker compose up -d
 su -m root -c 'chown -Rv $USER:users \
     data-node \
