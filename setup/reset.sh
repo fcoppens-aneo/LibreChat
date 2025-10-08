@@ -6,10 +6,10 @@ TARGET="LibreChat"
 ROOT="/work/home/fcoppens/LCB/$TARGET"
 
 # VM info
-VM="Nextcloud-base"
+VM="lc-hr-sharepoint"
 SNAPSHOT="02"
 TIMEOUT="10"
-HOST="10.0.0.173"
+HOST="10.0.0.205"
 USER="fcoppens"
 
 # Shutdown VM and wait for it to finish
