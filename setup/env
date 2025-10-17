@@ -661,7 +661,7 @@ OPENWEATHER_API_KEY=
 SERPER_API_KEY=fd611ed4f012a0987dd67a1f94e59ceaf5c3d62d
 
 # Scraper (Required)
-# FIRECRAWL_API_KEY=your_firecrawl_api_key
+FIRECRAWL_API_KEY=fc-2348250e4ab64c839e456a2123b69f59
 # Optional: Custom Firecrawl API URL
 # FIRECRAWL_API_URL=your_firecrawl_api_url
 
