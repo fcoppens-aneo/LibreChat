@@ -51,6 +51,16 @@ services:
     depends_on:
       - prometheus
 
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    container_name: searxng
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./searxng/config/:/etc/searxng/
+      - ./searxng/data/:/var/cache/searxng/
+    restart: unless-stopped
+
 volumes:
   ollama_data:
   prometheus-data:
