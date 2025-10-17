@@ -19,7 +19,7 @@ webSearch:
   safeSearch: 1
 
 interface:
-  customWelcome: "Bienvenue sur chAtNEO\n"
+  customWelcome: "Bonjour {{user.name}} ! Bienvenue sur chAtNEO\n"
   privacyPolicy:
     externalUrl: 'https://librechat.ai/privacy-policy'
     openNewTab: true
@@ -64,14 +64,14 @@ interface:
       If you have any questions about these Terms, please contact us at contact@librechat.ai.
 
       By using the Website, you acknowledge that you have read these Terms of Service and agree to be bound by them.
-  endpointsMenu: true
-  modelSelect: true
-  parameters: true
+  #endpointsMenu: false
+  modelSelect: false
+  parameters: false
   sidePanel: true
-  presets: true
+  presets: false
   prompts: true
-  bookmarks: true
-  multiConvo: true
+  bookmarks: false
+  multiConvo: false
   agents: true
   webSearch: true
 

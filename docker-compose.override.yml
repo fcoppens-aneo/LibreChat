@@ -15,6 +15,43 @@ services:
       - ollama_data:/root/.ollama
     entrypoint: ['/ollama_start.sh']
     restart: always
-    
+
+  metrics:
+    image: ghcr.io/virtuos/librechat_exporter:main
+    depends_on:
+      - mongodb
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/
+      - LOGGING_LEVEL=info
+
+  prometheus:
+    image: prom/prometheus
+    depends_on:
+      - metrics
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
 volumes:
   ollama_data:
+  prometheus-data:
+  grafana-data:
