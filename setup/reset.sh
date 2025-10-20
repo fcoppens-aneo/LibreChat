@@ -7,7 +7,7 @@ ROOT="/work/home/fcoppens/LCB/$TARGET"
 
 # VM info
 VM="lc-hr-sharepoint"
-SNAPSHOT="02"
+SNAPSHOT="03"
 TIMEOUT="10"
 HOST="10.0.0.205"
 USER="fcoppens"
